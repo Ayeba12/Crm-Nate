@@ -314,19 +314,28 @@ const Dashboard: React.FC<DashboardProps> = ({ leads, onViewChange, onImportLead
                     dataKey="name" 
                     axisLine={false} 
                     tickLine={false} 
-                    tick={{ fill: isDark ? '#9CA3AF' : '#6B7280', fontSize: 11 }} 
+                    tick={{ fill: isDark ? '#D1D5DB' : '#374151', fontSize: 11 }} 
                     dy={10}
                 />
                 <YAxis hide />
                 <Tooltip 
                     cursor={{ fill: 'transparent' }}
                     contentStyle={{ 
-                        borderRadius: '6px', 
+                        borderRadius: '8px', 
                         border: isDark ? '1px solid #374151' : '1px solid #E5E7EB', 
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         fontSize: '12px',
-                        backgroundColor: isDark ? '#1F2937' : '#FFFFFF',
-                        color: isDark ? '#F3F4F6' : '#111827'
+                        backgroundColor: isDark ? '#000000' : '#FFFFFF',
+                        color: isDark ? '#FFFFFF' : '#000000',
+                        padding: '8px 12px'
+                    }}
+                    itemStyle={{
+                        color: isDark ? '#FFFFFF' : '#000000',
+                        fontWeight: 600
+                    }}
+                    labelStyle={{
+                        color: isDark ? '#E5E7EB' : '#374151',
+                        marginBottom: '0.25rem'
                     }}
                 />
                 <Bar dataKey="count" radius={[4, 4, 4, 4]}>
@@ -353,11 +362,21 @@ const Dashboard: React.FC<DashboardProps> = ({ leads, onViewChange, onImportLead
                 </defs>
                 <Tooltip 
                     contentStyle={{ 
-                        borderRadius: '6px', 
+                        borderRadius: '8px', 
                         border: isDark ? '1px solid #374151' : '1px solid #E5E7EB', 
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                         fontSize: '12px',
-                        backgroundColor: isDark ? '#1F2937' : '#FFFFFF',
-                        color: isDark ? '#F3F4F6' : '#111827'
+                        backgroundColor: isDark ? '#000000' : '#FFFFFF',
+                        color: isDark ? '#FFFFFF' : '#000000',
+                        padding: '8px 12px'
+                    }}
+                    itemStyle={{
+                        color: isDark ? '#FFFFFF' : '#000000',
+                        fontWeight: 600
+                    }}
+                    labelStyle={{
+                        color: isDark ? '#E5E7EB' : '#374151',
+                        marginBottom: '0.25rem'
                     }}
                     formatter={(value: number) => [formatCurrency(value), 'Revenue']}
                 />
