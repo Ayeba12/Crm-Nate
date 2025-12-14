@@ -33,7 +33,7 @@ export interface Pipeline {
   stages: Stage[];
 }
 
-export type ViewState = 'dashboard' | 'pipelines' | 'leads' | 'invoices' | 'billing' | 'settings';
+export type ViewState = 'dashboard' | 'pipelines' | 'leads' | 'tasks' | 'invoices' | 'billing' | 'settings';
 
 export interface DashboardMetrics {
   totalPipelineValue: number;
@@ -55,3 +55,34 @@ export interface Invoice {
 
 export type Currency = 'USD' | 'EUR' | 'GBP';
 export type Language = 'English' | 'Spanish' | 'French';
+
+// Task Types
+export type TaskPriority = 'Low' | 'Medium' | 'High' | 'Critical';
+export type TaskStatus = 'Open' | 'In Progress' | 'Completed' | 'Archived';
+
+export interface Task {
+  id: string;
+  title: string;
+  description?: string;
+  priority: TaskPriority;
+  status: TaskStatus;
+  dueDate?: string;
+  ownerId: string;
+  leadIds: string[]; // Linked leads
+  createdAt: string;
+  updatedAt?: string;
+}
+
+// Saved List Types
+export type SavedListType = 'ManualSelection' | 'FilterBased';
+
+export interface SavedList {
+  id: string;
+  name: string;
+  description?: string;
+  type: SavedListType;
+  leadIds: string[];
+  ownerId: string;
+  createdAt: string;
+  updatedAt?: string;
+}

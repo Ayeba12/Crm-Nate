@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Kanban, Users, CreditCard, Settings, Hexagon, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, Kanban, Users, CreditCard, Settings, Hexagon, FileText, ChevronLeft, ChevronRight, CheckSquare } from 'lucide-react';
 import { ViewState } from '../types';
 
 interface SidebarProps {
@@ -16,6 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isMobile, 
     { id: 'dashboard', label: 'dashboard', icon: LayoutDashboard },
     { id: 'pipelines', label: 'pipelines', icon: Kanban },
     { id: 'leads', label: 'leads', icon: Users },
+    { id: 'tasks', label: 'tasks', icon: CheckSquare },
     { id: 'invoices', label: 'invoices', icon: FileText },
     { id: 'billing', label: 'billing', icon: CreditCard },
   ];
