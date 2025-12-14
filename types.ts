@@ -44,13 +44,13 @@ export interface DashboardMetrics {
 export type InvoiceStatus = 'draft' | 'pending' | 'paid' | 'overdue';
 
 export interface Invoice {
-    id: string;
-    clientName: string;
-    amount: number;
-    status: InvoiceStatus;
-    dueDate: string;
-    issueDate: string;
-    description: string;
+  id: string;
+  clientName: string;
+  amount: number;
+  status: InvoiceStatus;
+  dueDate: string;
+  issueDate: string;
+  description: string;
 }
 
 export type Currency = 'USD' | 'EUR' | 'GBP';
